@@ -1,26 +1,26 @@
-const { take, takeRight } = require('lodash')
-
 const multiply = (multiplicand1, multiplicand2) => {
-  const array1 = multiplicand1.toString().split('')
-  const array2 = multiplicand2.toString().split('')
-  const size = array1.length
+  const string1 = multiplicand1.toString()
+  const string2 = multiplicand2.toString()
 
-  if (size === 1 || array1.length !== array2.length || size % 2) {
+  const maxSize = Math.max(string1.length, string2.length)
+  const n = maxSize % 2 ? maxSize + 1 : maxSize
+
+  if (maxSize === 1) {
     return BigInt(multiplicand1) * BigInt(multiplicand2)
   }
 
   // naming based on algorithm formulas
-  const a = BigInt(take(array1, size / 2).join(''))
-  const b = BigInt(takeRight(array1, size / 2).join(''))
-  const c = BigInt(take(array2, size / 2).join(''))
-  const d = BigInt(takeRight(array2, size / 2).join(''))
+  const a = BigInt(string1.padStart(n, 0).slice(0, n / 2))
+  const b = BigInt(string1.padStart(n, 0).slice(n / 2))
+  const c = BigInt(string2.padStart(n, 0).slice(0, n / 2))
+  const d = BigInt(string2.padStart(n, 0).slice(n / 2))
 
   const ac = multiply(a, c)
   const bd = multiply(b, d)
   const abcd = multiply(a + b, c + d)
 
-  return ((BigInt(10) ** BigInt(size)) * ac)
-    + (BigInt(10) ** BigInt(size / 2)) * (abcd - ac - bd) + bd
+  return ((BigInt(10) ** BigInt(n)) * ac)
+    + (BigInt(10) ** BigInt(Math.ceil(n / 2))) * (abcd - ac - bd) + bd
 }
 
 module.exports = { multiply }
