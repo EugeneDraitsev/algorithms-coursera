@@ -1,0 +1,19 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest --verbose",
+    "lint": "eslint */**",
+    "lint:fix": "eslint */** --fix"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.120",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.15.0",
+    "jest": "^24.0.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}

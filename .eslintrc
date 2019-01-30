@@ -1,0 +1,19 @@
+{
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base"
+  ],
+  "rules": {
+    "linebreak-style": "off",
+    "no-plusplus": "off",
+    "no-console": "off",
+    "semi": [
+      "error",
+      "never"
+    ]
+  }
+}
