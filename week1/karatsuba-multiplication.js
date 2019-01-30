@@ -1,4 +1,3 @@
-/* eslint-disable no-undef,no-mixed-operators */
 const { take, takeRight } = require('lodash')
 
 const multiply = (multiplicand1, multiplicand2) => {
@@ -20,8 +19,8 @@ const multiply = (multiplicand1, multiplicand2) => {
   const bd = multiply(b, d)
   const abcd = multiply(a + b, c + d)
 
-  return BigInt(10) ** BigInt(size) * ac
-    + BigInt(10) ** BigInt(size / 2) * (abcd - ac - bd) + bd
+  return ((BigInt(10) ** BigInt(size)) * ac)
+    + (BigInt(10) ** BigInt(size / 2)) * (abcd - ac - bd) + bd
 }
 
 module.exports = { multiply }

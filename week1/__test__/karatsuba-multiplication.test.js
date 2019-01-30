@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const { multiply } = require('../karatsuba-multiplication')
 
 describe('karatsuba multiplication should works as designed', () => {
@@ -22,7 +21,6 @@ describe('karatsuba multiplication should works as designed', () => {
     expect(multiply(BigInt('78785412654512327878541265451232'),
       BigInt('78785412654512327878541265451232')))
       .toBe(BigInt('78785412654512327878541265451232') * BigInt('78785412654512327878541265451232'))
-
 
     expect(multiply(BigInt('7878541265451232787854126545123278785412654512327878541265451232'),
       BigInt('7878541265451232787854126545123278785412654512327878541265451232')))

@@ -15,5 +15,8 @@
       "error",
       "never"
     ]
+  },
+  "globals": {
+    "BigInt": true
   }
 }
