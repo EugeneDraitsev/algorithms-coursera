@@ -8,6 +8,7 @@
     "airbnb-base"
   ],
   "rules": {
+    "object-curly-newline": "off",
     "linebreak-style": "off",
     "operator-linebreak": "off",
     "no-plusplus": "off",
