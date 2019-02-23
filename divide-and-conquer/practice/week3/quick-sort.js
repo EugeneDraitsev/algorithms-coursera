@@ -37,7 +37,7 @@ const getPivot3 = (array) => {
   return array.indexOf(median)
 }
 
-const quickSort = (array, pivotFn, count = array.length - 1) => {
+const quickSort = (array, pivotFn = getPivot3, count = array.length - 1) => {
   const { length } = array
   if (length < 2) {
     return { array, count: 0 }

@@ -1,6 +1,6 @@
 const { multiply, stringMultiply } = require('../karatsuba-multiplication')
 
-describe('karatsuba multiplication should works as designed', () => {
+describe('karatsuba test', () => {
   test('karatsuba multiplication (multiply) should exist and be a function', () => {
     expect(multiply).toBeInstanceOf(Function)
   })
