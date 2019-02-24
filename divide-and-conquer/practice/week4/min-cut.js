@@ -1,6 +1,7 @@
-///////////////////////////////////////////////////////////////////////////////////////////////////
+/* eslint-disable no-unused-vars,no-param-reassign */
+// /////////////////////////////////////////////////////////////////////////////////////////////////
 // I need to skip tests here, because this is non-deterministic algorithm and its results may vary
-///////////////////////////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////////////////////////
 
 const { times, sample, cloneDeep } = require('lodash')
 const testData = require('./test-data.json')
@@ -11,7 +12,9 @@ const contractEdge = (data, [v1, v2]) => {
   delete data[v2]
 
   // replace all v2 with v1
-  Object.keys(data).forEach(key => data[key] = data[key].map(x => x === Number(v2) ? Number(v1) : x))
+  Object.keys(data).forEach((key) => {
+    data[key] = data[key].map(x => (x === Number(v2) ? Number(v1) : x))
+  })
 
   // remove self-loops
   data[v1] = data[v1].filter(x => x !== Number(v1))
@@ -21,7 +24,7 @@ const contractEdge = (data, [v1, v2]) => {
 
 const findMinCut = (data) => {
   const { length } = Object.keys(data)
-  const results = times(length / 5).map((run, i) => {
+  const results = times(length / 5).map(() => {
     const newData = cloneDeep(data)
 
     while (Object.keys(newData).length > 2) {
